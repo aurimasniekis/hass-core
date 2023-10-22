@@ -332,7 +332,7 @@ class Entity(ABC):
     def _report_implicit_device_name(self) -> None:
         """Report entities which use implicit device name."""
         if self._implicit_device_name_reported:
-            return
+            return super().unique_id
         report_issue = self._suggest_report_issue()
         _LOGGER.warning(
             (
